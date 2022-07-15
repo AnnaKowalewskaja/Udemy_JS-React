@@ -55,4 +55,19 @@
 //git status
 //git add -A   //все файлы добавляются в индекс, гит-статус
 
-//git commit -a -m"init:first commit"
+//git commit -a -m"init:first commit" //control toczka
+
+//git log - для вывода информации о коммитах
+
+//command from github
+//git push - send repo
+
+//git how to -kurs for githab
+
+//17 Как работать с GitHub с разных компьютеров, gitignore и Git Kraken
+//git clone  https://github.com/AnnaKowalewskaja/Udemy_JS-React.git  project
+
+//git pull -  for update   repo from github
+
+
+
