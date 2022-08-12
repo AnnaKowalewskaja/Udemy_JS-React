@@ -109,7 +109,7 @@ function compareNum(a, b) {
 // products.sort();
 // console.log(products.join('; '));
 
-//35. Передача по ссылке или по значению, Spread оператор (ES6-ES9)
+//35. Передача по ссылке или по значению, Spread оператор (ES6-ES9)КОПИИ МАСИВОВ И ОБЪЕКТОВ
 
 let a = 5,
     b = a;
@@ -154,10 +154,45 @@ newNumbers.c.x =12;
 // console.log(newNumbers.c.x);
 // console.log(numbers.c.x);
 
+const add = {
+    d:17,
+    i:20,
+};
 
+const clone = (Object.assign({}, add));  //////создать копию!!!
+clone.d= 23;
+// console.log(clone);
+// console.log(add);
 
+const oldArray = ['a', 'b','c'];
+const newArray = oldArray.slice();
+newArray[1] = "hello copy";
+// console.log(newArray);
+// console.log(oldArray);
 
+const video = ['youtube','vimeo','rutube'],
+blogs = ['wordpress','livejournal', 'blogger'],
+internet= [...video,  ...blogs, 'vk', 'facbook'];
+// console.log(internet);
 
+function log(a,b,c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2,5,7];
+//log(...num);
+
+const array = ['a', 'b'];
+const newAaray= [...array];
+
+const q =   {
+    one:1,
+    two :2,
+};
+
+const newObj ={...q};
 
 
 
