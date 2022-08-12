@@ -74,7 +74,7 @@ const options = {
 
 const arr = [2, 23, 13, 56, 18];
 arr.sort(compareNum);
-console.log(arr);
+//console.log(arr);
 
 function compareNum(a, b) {
     return a - b;
@@ -113,4 +113,53 @@ function compareNum(a, b) {
 
 let a = 5,
     b = a;
-    
+b = b + 5;
+// console.log(b);
+// console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1,
+};
+
+// const copy = obj; //link for obj
+// copy.a = 10;
+// // console.log(copy);
+// // console.log(obj);
+
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+
+const numbers = {
+    a:2,
+    b: 'hello',
+    c:{
+        x:7,
+        y:4
+    }
+};
+
+let newNumbers = copy(numbers);
+    newNumbers.a = 10;
+// console.log(newNumbers);
+// console.log(numbers);
+
+newNumbers.c.x =12;
+// console.log(newNumbers.c.x);
+// console.log(numbers.c.x);
+
+
+
+
+
+
+
+
+
+
