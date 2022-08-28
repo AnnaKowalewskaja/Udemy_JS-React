@@ -185,16 +185,66 @@ const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'B
 
 function sortStudentsByGroups(arr) {
     arr.sort();
-    let res = [];
-    for (let i = 0; i <= 2; i++) {
-        res[i] = [];
-        for (let j = 0; j <= 2; j++) {
-            //res[i].push(arr[j + i]);
-            res[i].push(j + i);
+    const a = [],
+        b = [],
+        c = [],
+        rest = [];
 
+    for (let i = 0; i < arr.length; i++) {
+        if (i < 3) {
+            a.push(arr[i]);
+        } else if (i < 6) {
+            b.push(arr[i]);
+        } else if (i < 9) {
+            c.push(arr[i]);
+        } else {
+            rest.push(arr[i]);
         }
-
     }
-    return res;
+    return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]
 }
-console.log(sortStudentsByGroups(students));
+//console.log(sortStudentsByGroups(students));
+
+//38. Отлавливаем ошибки в своем коде при помощи консоли разработчика. Breakpoints
+
+//39. Динамическая типизация в JS
+//число может стать строкой,строка-числом и тд
+
+// console.log(typeof(String(null)));//string
+// console.log(typeof(String(4)));//string
+
+// console.log(typeof(5+""));//string
+
+const num = 6;
+//console.log('https://vk.com/catalog/' + num);
+
+const fontSize = 26 + 'px';
+
+
+// console.log(typeof(Number('4')));//number
+// console.log(typeof(+'5'));//number
+// console.log(parseInt("15px",10));//15
+
+
+//let answ = +prompt('hello',"");
+
+//to boolean
+
+//false :
+//0,'',null, undefined, NaN
+
+// let switcher = null;
+// if(switcher){
+//     console.log('working...');
+// }
+
+// switcher = 1;
+
+// if(switcher){
+//     console.log('working...');
+// }
+
+console.log(typeof(Boolean('4')));//boolean
+
+
+console.log(typeof(!!'444'));//boolean
