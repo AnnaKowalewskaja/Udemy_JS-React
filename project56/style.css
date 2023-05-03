@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* .box {
+    width: 150px;
+   
+    margin-bottom: 10px;
+   
+    font-size: 12px; 
+ 
+    
+} */
+
+.box {
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box:hover {
+    animation-name: rotate;
+    animation-duration: 0.0005ks;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+p{
+    font-size: 4em;
+    color:white;
+    padding: 10px 15px 20px 25px;
+}

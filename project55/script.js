@@ -1,7 +1,8 @@
 'use strict';
 
-const boxesQuery = document.querySelectorAll('.box');
-const boxesGet = document.getElementsByClassName('box'); //коллекция следит за элементами, а массив-нет
+const boxesQuery = document.querySelectorAll('.box');  //NodeList
+const boxesGet = document.getElementsByClassName('box'); //HTMLCollection
+//коллекция следит за элементами, а массив-нет 
 
 boxesQuery.forEach(box => {
     if (box.matches('.this')) {
