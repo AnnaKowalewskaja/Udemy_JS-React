@@ -16,3 +16,4 @@ btn.addEventListener('click', () => {
 // const style = window.getComputedStyle(box); //from css, no inline
 // console.log(style.display);
 
+document.documentElement.scrollTop=0; // page top 0
