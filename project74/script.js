@@ -222,22 +222,43 @@
  
 // urlObj.showCurrentURL();
 
-const urlObj = {
-    protocol: 'https',
-    domain: 'mysite.com'
-}
+// const urlObj = {
+//     protocol: 'https',
+//     domain: 'mysite.com'
+// }
  
-function showCurrentURL() {
-    const extractCurrDomain = () => {
-        return this.domain;
-    }
-    const extractCurrProtocol = () => {
-        return this.protocol;
-    }
+// function showCurrentURL() {
+//     const extractCurrDomain = () => {
+//         return this.domain;
+//     }
+//     const extractCurrProtocol = () => {
+//         return this.protocol;
+//     }
  
-    console.log(`${extractCurrProtocol()}://${extractCurrDomain()}`)
-}
+//     console.log(`${extractCurrProtocol()}://${extractCurrDomain()}`)
+// }
  
-const url = showCurrentURL.bind(urlObj);
+// const url = showCurrentURL.bind(urlObj);
  
-console.log(url);
+// console.log(url);
+
+////////////////////////////////////////////////////////////////////////////////////82
+
+// const persone = {
+//     name:'Alex',
+//     tel:'+485000000',
+//     parents:{
+//         mom:'Olga',
+//         dad:'Viktor'
+//     }
+// };
+
+// //console.log(JSON.stringify(persone)); //{"name":"Alex","tel":"+485000000"}
+// //console.log(JSON.parse(JSON.stringify(persone))); //{name: "Alex", tel: "+485000000"}
+
+// const clone = JSON.parse(JSON.stringify(persone));///Deep copy of object
+// clone.parents.dad = 'Dima';
+// console.log(clone);
+// console.log(persone);
+
+//Deep copy of object
