@@ -184,10 +184,10 @@
 //         console.log(this.a);
 //         return a + b;
 //     }
- 
+
 //     console.log(sum());
 // }
- 
+
 // getSum(4, 5);
 
 // class Slider {
@@ -195,14 +195,14 @@
 //         this.width = width;
 //         this.height = height;
 //     }
- 
+
 //     showSliderWidth() {
 //         console.log(this.width);
 //     }
 // }
- 
+
 // const slider = new Slider('500px', '150px');
- 
+
 // slider.showSliderWidth();
 
 // const urlObj = {
@@ -215,18 +215,18 @@
 //         const extractCurrProtocol = () => {
 //             return this.protocol;
 //         }
- 
+
 //         console.log(`${extractCurrProtocol()}://${extractCurrDomain()}`)
 //     }
 // }
- 
+
 // urlObj.showCurrentURL();
 
 // const urlObj = {
 //     protocol: 'https',
 //     domain: 'mysite.com'
 // }
- 
+
 // function showCurrentURL() {
 //     const extractCurrDomain = () => {
 //         return this.domain;
@@ -234,12 +234,12 @@
 //     const extractCurrProtocol = () => {
 //         return this.protocol;
 //     }
- 
+
 //     console.log(`${extractCurrProtocol()}://${extractCurrDomain()}`)
 // }
- 
+
 // const url = showCurrentURL.bind(urlObj);
- 
+
 // console.log(url);
 
 ////////////////////////////////////////////////////////////////////////////////////82
@@ -262,3 +262,46 @@
 // console.log(persone);
 
 //Deep copy of object
+
+
+////////////////////////////////////////////////////////////////////////////////////86
+// console.log('запрос..');
+
+// const req = new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//         console.log('подготовка...');
+//         const product = {
+//             name: 'TV',
+//             price: 2000,
+//         };
+//         resolve(product);
+
+//     }, 2000);
+// });
+
+//then == resolve
+// req.then((product) =>{
+//     setTimeout(() => {
+//         product.status = 'order';
+//         console.log(product);
+//     }, 2000);
+// });
+
+// req.then((product) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             product.status = 'order';
+//             //reject(product); //error
+//             resolve(product);
+//         }, 2000);
+//     }).then(data => {
+//         console.log(data);
+//     }).catch(()=>{
+//         console.error('Ошибка');
+//     });
+
+
+// });
+
+////////////////////////////////////////////////////////////////////////////////////87
+
