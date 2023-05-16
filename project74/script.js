@@ -304,4 +304,17 @@
 // });
 
 ////////////////////////////////////////////////////////////////////////////////////87
+fetch('https://jsonplaceholder.typicode.com/posts'),{
+    method:'POST',
+    body:JSON.stringify({
+        name:"Alex",
+        headers:{
+            'Content-type':'application/json',
+        }
+    })
+}
+      .then(response => response.json())
+      //приходит ответ от сервера в формате json,переводим в обхект ( .json), возвращает промис и дальшев консоль
+
+      .then(json => console.log(json));
 

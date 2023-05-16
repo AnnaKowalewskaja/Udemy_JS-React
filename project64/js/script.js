@@ -244,16 +244,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
             const statusMessage = document.createElement('img');
             statusMessage.src = message.loading;
-            statusMessage.style.cssText =`
+            statusMessage.style.cssText = `
             display:block;
             margin:0 auto`;
-            
-form.insertAdjacentElement('afterend',statusMessage);
 
-            const request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
+            form.insertAdjacentElement('afterend', statusMessage);
 
-            request.setRequestHeader('Content-type', 'application/json');
+            // const request = new XMLHttpRequest();
+            // request.open('POST', 'server.php');
+
+
+
             const formData = new FormData(form);
 
             const object = {};
@@ -263,19 +264,21 @@ form.insertAdjacentElement('afterend',statusMessage);
 
             const json = JSON.stringify(object);
 
-
-            request.send(json);
-            request.addEventListener('load', () => {
-                if (request.status === 200) {
-                    console.log(request.response);
-                   showThanksModal( message.success);
-                    form.reset();
-
-                    statusMessage.remove();
-
-                } else {
-                    showThanksModal(message.faillure);
-                }
+            fetch('server.php', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(object),
+            }).then(data => {
+                console.log(data);
+                showThanksModal(message.success);
+                form.reset();
+                statusMessage.remove();
+            }).catch(() => {
+                showThanksModal(message.faillure);
+            }).finally(() => {
+                form.reset();
             });
         });
 
