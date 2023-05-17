@@ -304,17 +304,66 @@
 // });
 
 ////////////////////////////////////////////////////////////////////////////////////87
-fetch('https://jsonplaceholder.typicode.com/posts'),{
-    method:'POST',
-    body:JSON.stringify({
-        name:"Alex",
-        headers:{
-            'Content-type':'application/json',
-        }
-    })
-}
-      .then(response => response.json())
-      //приходит ответ от сервера в формате json,переводим в обхект ( .json), возвращает промис и дальшев консоль
+// fetch('https://jsonplaceholder.typicode.com/posts'),{
+//     method:'POST',
+//     body:JSON.stringify({
+//         name:"Alex",
+//         headers:{
+//             'Content-type':'application/json',
+//         }
+//     })
+// }
+//       .then(response => response.json())
+//       //приходит ответ от сервера в формате json,переводим в обхект ( .json), возвращает промис и дальшев консоль
 
-      .then(json => console.log(json));
+//       .then(json => console.log(json));
 
+////////////////////////////////////////////////////////////////////////////////////88
+//filter
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart'];
+// const shortNames = names.filter((name) =>name.length < 5);
+// console.log(shortNames);
+
+//map
+// const answers =['IvaN','AnnA','Hello'];
+// const result = answers.map((item)=>item.toLowerCase());
+// console.log(result);
+
+// //every/some
+// const some =[4,'qwq','qddffcds'];
+// // console.log(some.some((item)=>typeof item ==='number')); //true
+// console.log(some.ever((item)=>typeof item ==='string'));
+
+//reduce
+// const arr = [4,5,1,3,2,6];
+//                             // 0   4
+//                             // 4   5
+//                             // 9   1
+//                             // 10 ...
+// const result = arr.reduce((sum,current)=>sum+current);
+// console.log(result);//21
+
+//                             // 3   4
+//                             //     5
+//                             //     1
+//                             //    ...
+// const result = arr.reduce((sum,current)=>sum+current,3);
+
+
+// const arr = ['apple','pear','plum'];
+
+// const result = arr.reduce((sum,current)=>`${sum}, ${current}`);
+// console.log(result);
+
+
+// const obj = {
+//     ivan: 'persone',
+//     ann: 'persone',
+//     dog: 'animal',
+//     cat: 'animal'
+// };
+
+// const newArr = Object.entries(obj)
+//     .filter((item) => item[1] === 'persone')
+//     .map(item => item[0]);
+// console.log(newArr);
