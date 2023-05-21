@@ -153,6 +153,9 @@ window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', showModalByScroll);
 
     //classes  for Cards
+
+
+
     class MenuCard {
         constructor(src, alt, title, description, price, parentSelector, ...classes) {
             this.src = src;
@@ -179,6 +182,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             element.innerHTML = `
+            <div class='menu__item'>
                     <img src=${this.src} alt=${this.alt}>
                     <h3 class="menu__item-subtitle">${this.title}</h3>
                     <div class="menu__item-descr">${this.description}</div>
@@ -187,13 +191,29 @@ window.addEventListener('DOMContentLoaded', () => {
                         <div class="menu__item-cost">Цена:</div>
                         <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
                     </div>
+                    </div>
                 `;
 
             this.parent.append(element);
         }
     }
 
+    const getResourse = async (url) => {
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+        }
 
+        return await res.json();
+    };
+
+    getResourse('http://localhost:3000/menu')
+        .then(data => {
+            data.forEach(({img,altimg,title,descr,price}) => {
+                console.log(data.descr);
+                new MenuCard(img,altimg,title,descr,price,'.menu .container').render();
+            });
+        });
 
 
     //FORMS
@@ -243,7 +263,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
-
 
             postData('http://localhost:3000/requests', json)
                 .then(data => {
