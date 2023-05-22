@@ -329,15 +329,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let slideIndex = 1;
     let offset = 0;
+    const widthSlice = +width.slice(0, width.length - 2);
     //1 wariant
 
+    function slideCounterName() {
+        if (slides.length < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
+    }
+
+    function dotsOpacity() {
+        dots.forEach(dot => dot.style.opacity = '.5');
+        dots[slideIndex - 1].style.opacity = 1;
+    }
+
+    function slidesTransform(){
+        slidesField.style.transform = `translateX(-${offset}px)`;
+    }
+
+    
+    slideCounterName();
     if (slides.length < 10) {
         total.textContent = `0${slides.length}`;
-        current.textContent = `0${slideIndex}`;
     } else {
         total.textContent = slides.length;
-        current.textContent = slideIndex;
     }
+
 
     slidesField.style.width = 100 * slides.length + '%';
     slidesField.style.display = 'flex';
@@ -357,6 +376,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const dot = document.createElement('li');
         dot.setAttribute('data-slide-to', i + 1);
         dot.classList.add('dot');
+        
         if (i == 0) {
             dot.style.opacity = 1;
         }
@@ -365,11 +385,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     next.addEventListener('click', () => {
-        slidesField.style.transform = `translateX(-${offset}px)`;
-        if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
+        slidesTransform();
+        if (offset == widthSlice * (slides.length - 1)) {
             offset = 0;
         } else {
-            offset += +width.slice(0, width.length - 2);
+            offset += widthSlice;
         }
 
         if (slideIndex == slides.length) {
@@ -377,24 +397,19 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             slideIndex++;
         }
-        if (slides.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
 
-        dots.forEach(dot => dot.style.opacity = '.5');
-        dots[slideIndex - 1].style.opacity = 1;
+        slideCounterName();
+        dotsOpacity();
     });
 
 
     prev.addEventListener('click', () => {
-        slidesField.style.transform = `translateX(-${offset}px)`;
+        slidesTransform();
         if (offset == 0) {
 
-            offset = +width.slice(0, width.length - 2) * (slides.length - 1);
+            offset = widthSlice * (slides.length - 1);
         } else {
-            offset -= +width.slice(0, width.length - 2);
+            offset -= widthSlice;
         }
         if (slideIndex == 1) {
             slideIndex = slides.length;
@@ -402,14 +417,8 @@ window.addEventListener('DOMContentLoaded', () => {
             slideIndex--;
         }
 
-        if (slides.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
-
-        dots.forEach(dot => dot.style.opacity = '.5');
-        dots[slideIndex - 1].style.opacity = 1;
+        slideCounterName();
+        dotsOpacity();
 
     });
 
@@ -417,17 +426,12 @@ window.addEventListener('DOMContentLoaded', () => {
         dot.addEventListener('click', (e) => {
             const slideTo = e.target.getAttribute('data-slide-to');
             slideIndex = slideTo;
-            offset = +width.slice(0, width.length - 2) * (slideTo - 1);
-            slidesField.style.transform = `translateX(-${offset}px)`;
+            offset = widthSlice * (slideTo - 1);
             
-            if (slides.length < 10) {
-                current.textContent = `0${slideIndex}`;
-            } else {
-                current.textContent = slideIndex;
-            }
-            dots.forEach(dot => dot.style.opacity = '.5');
-            dots[slideIndex - 1].style.opacity = 1;
-          
+            slidesTransform();
+            slideCounterName();
+            dotsOpacity();
+
 
         });
     });
