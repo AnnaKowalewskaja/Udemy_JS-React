@@ -216,7 +216,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 descr,
                 price
             }) => {
-                console.log(data.descr);
+         
                 new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
             });
         });
@@ -329,7 +329,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let slideIndex = 1;
     let offset = 0;
-    const widthSlice = +width.slice(0, width.length - 2);
+
     //1 wariant
 
     function slideCounterName() {
@@ -349,7 +349,9 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesField.style.transform = `translateX(-${offset}px)`;
     }
 
-    
+function deleteNotDigits(str){
+    return +str.replace(/\D/g,'');
+}
     slideCounterName();
     if (slides.length < 10) {
         total.textContent = `0${slides.length}`;
@@ -386,10 +388,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     next.addEventListener('click', () => {
         slidesTransform();
-        if (offset == widthSlice * (slides.length - 1)) {
+        if (offset == deleteNotDigits(width) * (slides.length - 1)) {
             offset = 0;
         } else {
-            offset += widthSlice;
+            offset += deleteNotDigits(width);
         }
 
         if (slideIndex == slides.length) {
@@ -407,9 +409,9 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesTransform();
         if (offset == 0) {
 
-            offset = widthSlice * (slides.length - 1);
+            offset = deleteNotDigits(width) * (slides.length - 1);
         } else {
-            offset -= widthSlice;
+            offset -= deleteNotDigits(width);
         }
         if (slideIndex == 1) {
             slideIndex = slides.length;
@@ -426,12 +428,11 @@ window.addEventListener('DOMContentLoaded', () => {
         dot.addEventListener('click', (e) => {
             const slideTo = e.target.getAttribute('data-slide-to');
             slideIndex = slideTo;
-            offset = widthSlice * (slideTo - 1);
+            offset = deleteNotDigits(width) * (slideTo - 1);
             
             slidesTransform();
             slideCounterName();
             dotsOpacity();
-
 
         });
     });
