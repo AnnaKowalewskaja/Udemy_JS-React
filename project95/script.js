@@ -16,7 +16,7 @@
 // }
 
 // if(localStorage.getItem('bg') === 'changed'){
-   
+
 //     form.style.backgroundColor = 'red';
 // }
 
@@ -64,8 +64,8 @@
 //    m  -многострчный режим
 
 // \d цифры  \D - не цифры
- // \w буквы   \W не буквы
-  // \s пробелы
+// \w буквы   \W не буквы
+// \s пробелы
 //console.log(ans.search(reg));
 //console.log(ans.match(reg)); //array
 
@@ -73,4 +73,19 @@
 // console.log(pass.replace(/\./g,"*")); //  \. -только точки экранирование
 
 
-//console.log('12-34-56'.replace(/-/g, ':'));
+//console.log('12-34-56'.replace(/-/g, ':'));\
+
+////////////////////////// 99
+const persone = {
+    name: 'Alex',
+    age: 25,
+    get userAge() {
+        return this.age;
+    },
+    set userAge(num) {
+        this.age = num;
+    }
+};
+console.log(persone.userAge);
+console.log(persone.userAge = 30);
+console.log(persone.userAge);
