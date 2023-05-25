@@ -1,4 +1,4 @@
-// 'use strict';
+ 'use strict';
 
 // //95
 // // localStorage.setItem('number',5);
@@ -76,16 +76,102 @@
 //console.log('12-34-56'.replace(/-/g, ':'));\
 
 ////////////////////////// 99
-const persone = {
-    name: 'Alex',
-    age: 25,
-    get userAge() {
-        return this.age;
-    },
-    set userAge(num) {
-        this.age = num;
+// const persone = {
+//     name: 'Alex',
+//     age: 25,
+//     get userAge() {
+//         return this.age;
+//     },
+//     set userAge(num) {
+//         this.age = num;
+//     }
+// };
+// console.log(persone.userAge);
+// console.log(persone.userAge = 30);
+// console.log(persone.userAge);
+
+////////////////////////// 100
+
+// function User(name,age){
+//     this.name = name;
+//     this.age = age;
+//     this.say = function(){
+//         console.log(`Username: ${this.name},age - ${this.age}`);
+//     };
+// }
+
+// const ivan = new User('Ivan',27);
+// console.log(ivan.name);
+// console.log(ivan.age);
+
+// ivan.age = 30;
+// ivan.say();
+
+
+// function User(name,age){
+//     this.name = name;
+//     let userAge = age;
+//     this.say = function(){
+//         console.log(`Username: ${this.name},age - ${userAge}`);
+//     };
+
+//     this.getAge = function(){
+//         return userAge;
+//     };
+
+//     this.setAge = function(age){
+//         if(typeof age ==='number' && age > 0 && age<110){
+//             userAge = age;
+//         }else{
+//             console.log('недопустимое значение');
+//         }
+//     };
+// }
+
+
+// const ivan = new User('Ivan',27);
+// console.log(ivan.name);
+// console.log(ivan.getAge());
+
+// ivan.setAge(30);
+// ivan.setAge(303);//недопустимое значение
+// ivan.say();
+//пример инкапсуляции.когда используется через this-можно изменить свойства
+//если создать новую переменную в конструкторе - изменить её нельзя,тк снаружи переменная недоступна
+//для изменеия свойств можно использовать геттеры и сеттеры(функции или get,set)
+
+
+
+class User{
+    constructor(name,age){
+        this.name = name;
+        this._age = age;
     }
-};
-console.log(persone.userAge);
-console.log(persone.userAge = 30);
-console.log(persone.userAge);
+    
+   say(){
+        console.log(`Username: ${this.name},age - ${this._age}`);
+    }
+
+    get age(){
+        return this._age;
+    }
+
+    set age(age){
+        if(typeof age ==='number' && age > 0 && age<110){
+            this._age = age;
+        }else{
+            console.log('недопустимое значение');
+        }
+    }
+}
+
+
+const ivan = new User('Ivan',27);
+console.log(ivan.name);
+
+
+ivan.age = 99;
+console.log(ivan.age);
+
+ivan.say();
+// _age ---это значит, что изменять нельзя(в классах переменные видны)
