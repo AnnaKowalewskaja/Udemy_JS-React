@@ -27,3 +27,14 @@
 
 // });
 
+
+//////////////////////////////////////103
+// import {two} from './main';
+// import {one as first} from './main';
+
+// import * as data from './main';
+// console.log(`${data.one} and ${data.two}`);
+// data.sayHi();
+
+import sayHi from "./main";
+//export default function //only one export default
