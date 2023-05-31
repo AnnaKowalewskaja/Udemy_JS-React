@@ -1,4 +1,3 @@
-
 'use strict';
 // const timerId1 = setTimeout(function(text){
 //     console.log(text);
@@ -28,6 +27,7 @@
 // }
 
 // btn.addEventListener('click', myAnimation);
+
 
 // function logger(){
 //     if(i===3){
@@ -75,3 +75,22 @@
 // let end = new Date();
 // console.log(`Start -end = ${end-start}`); 
 
+/////////////////////////////////112
+// const btn = document.querySelector('.btn');
+// let timerId,
+//     i = 0;
+// const elem = document.querySelector('.box');
+// let pos = 0;
+
+// function myAnimation() {
+//     pos++;
+//     elem.style.top = pos + 'px';
+//     elem.style.left = pos + 'px';
+//     if (pos < 300) {
+//         requestAnimationFrame(myAnimation);
+//     }
+
+
+// }
+
+// btn.addEventListener('click', () =>{requestAnimationFrame(myAnimation)});
