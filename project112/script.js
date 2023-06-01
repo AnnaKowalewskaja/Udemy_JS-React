@@ -106,8 +106,68 @@
 // }
 
 
-setTimeout(()=>{
-    console.log(1);
-},0);
-console.log(2);
+// setTimeout(()=>{
+//     console.log(1);
+// },0);
+// console.log(2);
 
+///////////////////////////////////////////////////////115
+
+setTimeout(() => {
+    console.log('timut');
+});
+
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+
+setTimeout(() => {
+    console.log('timut');
+});
+
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+Promise.resolve()
+.then(() =>console.log('promise'));
+
+console.log('code');
+
+
+/*
+code
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+promise
+timut
+timut
+
+*/
+
+//first -micro tasks(then,catch,finaly,awiat)
+//second - macrotasks ()=>{}
