@@ -113,41 +113,41 @@
 
 ///////////////////////////////////////////////////////115
 
-setTimeout(() => {
-    console.log('timut');
-});
+// setTimeout(() => {
+//     console.log('timut');
+// });
 
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
 
-setTimeout(() => {
-    console.log('timut');
-});
+// setTimeout(() => {
+//     console.log('timut');
+// });
 
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
-Promise.resolve()
-.then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
+// Promise.resolve()
+// .then(() =>console.log('promise'));
 
-console.log('code');
+// console.log('code');
 
 
 /*
@@ -171,3 +171,5 @@ timut
 
 //first -micro tasks(then,catch,finaly,awiat)
 //second - macrotasks ()=>{}
+
+
