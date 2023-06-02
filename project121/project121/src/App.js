@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {Component} from 'react';
+import {Component, StrictMode} from 'react';
 import './App.css';
 const Header = () => {
   return <h2>Hello</h2>
@@ -44,7 +44,9 @@ function Btn() {
 function App() {
   return (
     <div className="App">
+      <StrictMode>
       <Header />
+      </StrictMode>
       <Field />
       <Btn />
     </div>
