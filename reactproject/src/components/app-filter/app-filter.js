@@ -12,7 +12,7 @@ const AppFilter = () => {
             <button
                 className="btn btn-outline-light"
                 type="button ">
-                For promotion
+                For rise
             </button>
             <button
                 className="btn btn-outline-light"
