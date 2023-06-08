@@ -76,3 +76,15 @@ button {
 	margin-top: 30px;
 	color: #fff;
 }
+
+.heart:nth-child(2){
+   background-color: aqua;
+}
+
+h1.catalog-masthead__title{
+   color:red;
+}
+
+.offers-description__details .offers-description__price{
+   color:red;
+}
