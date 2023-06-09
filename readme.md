@@ -9,4 +9,4 @@ State Task
 https://codepen.io/AnnaKowalewskaja/pen/LYXPjRO?editors=1111
 
 React Employees Filter,Add,Delete
-https://annakowalewskaja.github.io/Udemy_JS-React/reactproject/src/app
+https://annakowalewskaja.github.io/Udemy_JS-React/reactproject/src/app/app.js
