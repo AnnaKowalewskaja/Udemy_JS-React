@@ -6,4 +6,11 @@ npx create-react-app project-name
 
 cd project121
   npm start
+
+
+
+
+
+  For Sass
+  npm i sass --save
 */
