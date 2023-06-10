@@ -4,13 +4,12 @@ import './employees-add-form.scss';
 import { Component } from 'react';
 
 class EmployeesAddForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            salary: ''
-        }
+
+    state = {
+        name: '',
+        salary: ''
     }
+
 
     onValueChange = (e) => {
         this.setState({
@@ -27,15 +26,22 @@ class EmployeesAddForm extends Component {
         })
     }
 
+
+    //static method
+//    static onLog = () =>{
+// console.log('Hey');
+//     }
+
+    static logged = 'on';
     render() {
 
         const { name, salary } = this.state;
         return (
             <div className="app-add-form">
                 <h3>Add a new employee</h3>
-                <form 
+                <form
                     className="add-form d-flex"
-                    onSubmit = {this.onSubmit}>
+                    onSubmit={this.onSubmit}>
                     <input type="text"
                         className="form-control new-post-label"
                         placeholder="Employee name"
@@ -57,6 +63,12 @@ class EmployeesAddForm extends Component {
     }
 }
 
+
+
+
+// EmployeesAddForm.onLog();
+// EmployeesAddForm.logged();
 export default EmployeesAddForm;
+
 
 
