@@ -3,13 +3,13 @@ import './app-filter.css';
 
 const AppFilter = (props) => {
     const buttonData = [
-        { name: 'all', label: 'All employees', colored:false },
-        { name: 'rise', label: 'For rise', colored:false },
-        { name: 'moreThen1000', label: 'Salary over 1000$', colored:true },
+        { name: 'all', label: 'All employees', },
+        { name: 'rise', label: 'For rise', },
+        { name: 'moreThen1000', label: 'Salary over 1000$', },
     ];
 
 
-    const buttons = buttonData.map(({ name, label,colored }) => {
+    const buttons = buttonData.map(({ name, label }) => {
         const active = props.filter === name;
         const clazz = active ? 'btn-light' : 'btn-outline-light';
         return (
@@ -18,7 +18,7 @@ const AppFilter = (props) => {
                 type="button "
                 key={name}
                 onClick={() => props.onFilterSelect(name)}
-                style ={colored ? {color:'red'}: null}>
+            >
                 {label}
             </button>
         )
