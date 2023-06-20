@@ -9,11 +9,6 @@ import ErrorMessage from '../errorMessage/ErrorMesage';
 
 
 class RandomChar extends Component {
-    constructor(props) {
-        super(props);
-        this.updateChar();
-    }
-
 
     state = {
         char: {},
@@ -30,6 +25,10 @@ class RandomChar extends Component {
         })
     }
 
+    componentDidMount() {
+        this.updateChar();
+    }
+    
     onError = () => {
         this.setState({
             loading: false,
@@ -47,18 +46,18 @@ class RandomChar extends Component {
 
     render() {
 
-        const { char, loading,error } = this.state;
-const errorMessage = error? <ErrorMessage/> :null;
-const spinner = loading?<Spinner/> :null;
+        const { char, loading, error } = this.state;
+        const errorMessage = error ? <ErrorMessage /> : null;
+        const spinner = loading ? <Spinner /> : null;
 
-const content = !(loading || error) ? <View char={char} /> :null;
+        const content = !(loading || error) ? <View char={char} /> : null;
 
 
         return (
             <div className="randomchar">
-              {errorMessage}
-              {spinner}
-              {content}
+                {errorMessage}
+                {spinner}
+                {content}
                 <div className="randomchar__static">
                     <p className="randomchar__title">
                         Random character for today!<br />
