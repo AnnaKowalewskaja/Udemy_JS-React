@@ -14,12 +14,14 @@ class RandomChar extends Component {
         char: {},
         loading: true,
         error: false,
+        
     }
 
     marvelService = new MarvelService;
 
     onCharLoaded = (char) => {
         this.setState({
+
             char,
             loading: false
         })
@@ -27,7 +29,8 @@ class RandomChar extends Component {
 
     onCharLoading = () => {
         this.setState({
-            loading: true
+            loading: true,
+           
         })
     }
 
@@ -39,6 +42,7 @@ class RandomChar extends Component {
         this.setState({
             loading: false,
             error: true,
+            
         })
     }
 
@@ -52,7 +56,7 @@ class RandomChar extends Component {
     }
 
     render() {
-        
+
         const { char, loading, error } = this.state;
         const errorMessage = error ? <ErrorMessage /> : null;
         const spinner = loading ? <Spinner /> : null;
